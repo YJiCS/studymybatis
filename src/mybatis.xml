@@ -3,6 +3,13 @@
         PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
+    <!--类型的别名-->
+    <typeAliases>
+        <!--给类起别名-->
+<!--        <typeAlias type="com.pojo.Users" alias="users"/>-->
+        <!--给包起别名，别名为包下面的类名-->
+        <package name="com.pojo"/>
+    </typeAliases>
     <!--defautl引用environment的id，当前所使用的环境-->
     <environments default="default">
         <!--声明可以使用的环境-->

@@ -10,7 +10,42 @@
 		如果方法返回值是list,在resultType中写List的泛型,因为mybatis
 		对jdbc封装,一行一行读取数据
 	-->
-    <select id="selAllUsers" resultType="com.pojo.Users">
+<!--    <select id="selAllUsers" resultType="com.pojo.Users">
         select * from users
     </select>
+    <select id="selOne" resultType="com.pojo.Users" parameterType="int">
+        select * from users where userNo=#{0}
+    </select>
+    <select id="selPage" resultType="com.pojo.Users" parameterType="map">
+        select * from users limit #{pageStart},#{pageSize}
+    </select>-->
+
+    <!--类型使用别名
+        在mybatis.xml文件中配置-->
+    <!--类别名-->
+    <!--    <select id="selAllUsers" resultType="users">
+            select * from users
+        </select>
+        <select id="selOne" resultType="users" parameterType="int">
+            select * from users where userNo=#{0}
+        </select>
+        <select id="selPage" resultType="users" parameterType="map">
+            select * from users limit #{pageStart},#{pageSize}
+        </select>-->
+
+    <!--包别名-->
+    <select id="selAllUsers" resultType="Users">
+        select * from users
+    </select>
+    <select id="selOne" resultType="Users" parameterType="int">
+        select * from users where userNo=#{0}
+    </select>
+    <select id="selPage" resultType="Users" parameterType="map">
+        select * from users limit #{pageStart},#{pageSize}
+    </select>
+    <insert id="ins" parameterType="Users">
+        insert into users values(#{userNo},#{userName},#{userPwd},#{userSex},#{userAddress})
+    </insert>
+
+
 </mapper>
