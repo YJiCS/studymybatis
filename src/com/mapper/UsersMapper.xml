@@ -3,7 +3,7 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <!-- namesapce:理解成实现类的全路径(包名+类名) -->
-<mapper namespace="selUsers">
+<mapper namespace="com.mapper.UserMapper">
     <!-- id:方法名
 		parameterType:定义参数类型
 		resultType:返回值类型.
@@ -33,7 +33,7 @@
             select * from users limit #{pageStart},#{pageSize}
         </select>-->
 
-    <!--包别名-->
+<!--    &lt;!&ndash;包别名&ndash;&gt;
     <select id="selAllUsers" resultType="Users">
         select * from users
     </select>
@@ -45,7 +45,11 @@
     </select>
     <insert id="ins" parameterType="Users">
         insert into users values(#{userNo},#{userName},#{userPwd},#{userSex},#{userAddress})
-    </insert>
+    </insert>-->
 
+    <!--使用接口绑定-->
+    <select id="selAll" resultType="Users">
+        select * from users
+    </select>
 
 </mapper>

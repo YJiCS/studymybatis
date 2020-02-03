@@ -1,5 +1,6 @@
 package demo;
 
+import com.mapper.UserMapper;
 import com.pojo.Users;
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
@@ -37,6 +38,7 @@ public class Demo01 {
 //        List<Users> list =session.selectList("selUsers.selPage",map);
 //        System.out.println(list);
 
+/*
         //实现新增  mybatis中事务不会自动提交，需要执行seeeion.commit()提交。
         Users users=new Users();
         users.setUserNo(7);
@@ -73,7 +75,15 @@ public class Demo01 {
             session.rollback();//出现异常进行事务回滚
         }
         session.commit();
+*/
 
+        //使用接口绑定
+        UserMapper userMapper = session.getMapper(UserMapper.class);
+        List<Users> list = userMapper.selAll();
+        for (Users users :
+                list) {
+            System.out.println(users);
+        }
         session.close();
     }
 }
