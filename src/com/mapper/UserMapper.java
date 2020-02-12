@@ -5,7 +5,7 @@ import com.pojo.Users;
 import java.util.List;
 
 /**
- * 使用接口绑定
+ * 浣跨敤鎺ュ彛缁戝畾
  */
 public interface UserMapper {
     List<Users> selAll();
