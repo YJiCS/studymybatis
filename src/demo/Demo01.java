@@ -85,5 +85,7 @@ public class Demo01 {
             System.out.println(users);
         }
         session.close();
+
+        System.out.println("¸üÐÂ0304");
     }
 }
