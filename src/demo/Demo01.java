@@ -87,5 +87,6 @@ public class Demo01 {
         session.close();
 
         System.out.println("更新0304");
+        System.out.println("更新0305");
     }
 }
